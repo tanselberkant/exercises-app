@@ -12,7 +12,6 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     const url = 'https://exercisedb.p.rapidapi.com/exercises/bodyPartList';
     const fetchexercisesData = async () => {
       const bodyPartsData = await fetchData(url, exerciseOptions);
-      console.log('bodyPartsData', bodyPartsData);
 
       setBodyParts(['all', ...bodyPartsData]);
     };
@@ -34,6 +33,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       );
       setSearch('');
       setExercises(searchedExercises);
+      window.scrollTo({ top: 1800, behavior: 'smooth' });
     }
   };
 
